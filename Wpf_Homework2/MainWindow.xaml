@@ -1,0 +1,318 @@
+﻿<Window x:Class="Wpf_Homework2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Homework2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid>
+
+        <!-- General row division-->
+        
+        <Grid.RowDefinitions>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+
+        </Grid.RowDefinitions>
+
+
+        
+        <!-- Settings -->
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+
+                <Label Content="Speed:" Margin="0,0,5,0" FontSize="15"/>
+                <Label Name="speedLabel" FontWeight="Bold" FontSize="15"/>
+                <Label Content="chars/min" Margin="5,0,0,0" FontSize="15"/>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+
+                <Label Content="Fails:" Margin="0,0,5,0" FontSize="15"/>
+                <Label Name="failsNumberLabel" FontWeight="Bold" FontSize="15"/>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+
+                <Label Content="Difficulty:" Margin="0,0,5,0" FontSize="15"/>
+                <Slider Minimum="5" Maximum="10" Width="100" Margin="5,5,0,0"/>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="3">
+
+                <CheckBox Content="Case Sensitive" Margin="0,5,0,0" FontSize="15"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2">
+
+                <Button Name="startButton" Click="startButton_Click" Content="Start" Margin="5,0,5,0" FontSize="15"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="3">
+
+                <Button Name="stopButton" Click="stopButton_Click" IsEnabled="False" Content="Stop" Margin="5,0,5,0" FontSize="15"/>
+
+            </StackPanel>
+
+        </Grid>
+
+
+
+        <!-- Text example/User input -->
+
+        <Grid Grid.Row="1"  Background="LightSkyBlue">
+            <Grid.RowDefinitions>
+
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <TextBox Name="exampleTextBox" Grid.Row="0" IsEnabled="False" Background="LightSkyBlue" BorderThickness="0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+            <TextBox Name="userInputTextBox" KeyDown="userInputTextBox_KeyDown" KeyUp="userInputTextBox_KeyUp" Grid.Row="1" Background="LightSkyBlue" BorderThickness="0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+
+        </Grid>
+
+
+
+        <!-- Keyboard -->
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+
+
+            <!-- Red = #f76e6e -->
+            <!-- Yellow = #f4f471 -->
+            <!-- Lime = Lime -->
+            <!-- Blue = #06bcf9 -->
+            <!-- Purple = #de6afb-->
+            <!-- Gray = #b3b3b3 -->
+
+
+
+
+            <Grid Grid.Row="0">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+
+                </Grid.ColumnDefinitions>
+
+                
+                <Button Name="someButton" Grid.Column="0" Content="`" Background="#f76e6e"/>
+                <Button Name="oneButton" Grid.Column="1" Content="1" Background="#f76e6e"/>
+                <Button Name="twoButton" Grid.Column="2" Content="2" Background="#f76e6e"/>
+                <Button Name="threeButton" Grid.Column="3" Content="3" Background="#f4f471"/>
+                <Button Name="fourButton" Grid.Column="4" Content="4" Background= "Lime"/>
+                <Button Name="fiveButton" Grid.Column="5" Content="5" Background="#06bcf9"/>
+                <Button Name="sixButton" Grid.Column="6" Content="6" Background="#06bcf9"/>
+                <Button Name="seventButton" Grid.Column="7" Content="7" Background="#de6afb"/>
+                <Button Name="eightButton" Grid.Column="8" Content="8" Background="#de6afb"/>
+                <Button Name="nineButton" Grid.Column="9" Content="9" Background="#f76e6e"/>
+                <Button Name="zeroButton" Grid.Column="10" Content="0" Background="#f4f471"/>
+                <Button Name="minusButton" Grid.Column="11" Content="-" Background="Lime"/>
+                <Button Name="equalsButton" Grid.Column="12" Content="=" Background="Lime"/>
+                <Button Grid.Column="13" Content="BackSpace" Background="#b3b3b3" FontSize="20"/>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button Grid.Column="0" Content="Tab" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="qButton" Grid.Column="1" Content="q" Background="#f76e6e"/>
+                <Button Name="wButton" Grid.Column="2" Content="w" Background="#f4f471"/>
+                <Button Name="eButton" Grid.Column="3" Content="e" Background="Lime"/>
+                <Button Name="rButton" Grid.Column="4" Content="r" Background= "#06bcf9"/>
+                <Button Name="tButton" Grid.Column="5" Content="t" Background="#06bcf9"/>
+                <Button Name="yButton" Grid.Column="6" Content="y" Background="#de6afb"/>
+                <Button Name="uButton" Grid.Column="7" Content="u" Background="#de6afb"/>
+                <Button Name="iButton" Grid.Column="8" Content="i" Background="#f76e6e"/>
+                <Button Name="oButton" Grid.Column="9" Content="o" Background="#f4f471"/>
+                <Button Name="pButton" Grid.Column="10" Content="p" Background="Lime"/>
+                <Button Name="leftBracketButton" Grid.Column="11" Content="[" Background="Lime"/>
+                <Button Name="rightBracketButton" Grid.Column="12" Content="]" Background="Lime"/>
+                <Button Name="backSlashButton" Grid.Column="13" Content="\" Background="Lime"/>
+
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button Name="capsLockButton" Grid.Column="0" Content="Caps Lock" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="aButton" Grid.Column="1" Content="a" Background="#f76e6e"/>
+                <Button Name="sButton" Grid.Column="2" Content="s" Background="#f4f471"/>
+                <Button Name="dButton" Grid.Column="3" Content="d" Background="Lime"/>
+                <Button Name="fButton" Grid.Column="4" Content="f" Background="#06bcf9"/>
+                <Button Name="gButton" Grid.Column="5" Content="g" Background="#06bcf9"/>
+                <Button Name="hButton" Grid.Column="6" Content="h" Background="#de6afb"/>
+                <Button Name="jButton" Grid.Column="7" Content="j" Background="#de6afb"/>
+                <Button Name="kButton" Grid.Column="8" Content="k" Background="#f76e6e"/>
+                <Button Name="lButton" Grid.Column="9" Content="l" Background="#f4f471"/>
+                <Button Name="semicolumnButton" Grid.Column="10" Content=";" Background="Lime"/>
+                <Button Name="paranthesisButton" Grid.Column="11" Content="'" Background="Lime"/>
+                <Button Grid.Column="12" Content="Enter" Background="#b3b3b3" FontSize="20"/>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="3">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2.5*"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button Name="lShiftButton" Grid.Column="0" Content="Shift" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="zButton" Grid.Column="1" Content="z" Background="#f76e6e"/>
+                <Button Name="xButton" Grid.Column="2" Content="x" Background="#f4f471"/>
+                <Button Name="cButton" Grid.Column="3" Content="c" Background="Lime"/>
+                <Button Name="vButton" Grid.Column="4" Content="v" Background="#06bcf9"/>
+                <Button Name="bButton" Grid.Column="5" Content="b" Background="#06bcf9"/>
+                <Button Name="nButton" Grid.Column="6" Content="n" Background="#de6afb"/>
+                <Button Name="mButton" Grid.Column="7" Content="m" Background="#de6afb"/>
+                <Button Name="commaButton" Grid.Column="8" Content="," Background="#f76e6e"/>
+                <Button Name="dotButton" Grid.Column="9" Content="." Background="#f4f471"/>
+                <Button Name="slashButton" Grid.Column="10" Content="/" Background="Lime"/>
+                <Button Name="rShiftButton" Grid.Column="11" Content="Shift" Background="#b3b3b3" FontSize="20"/>
+
+            </Grid>
+
+
+            <Grid Grid.Row="4">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Button Grid.Column="0" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
+                <Button Grid.Column="1" Content="Win" Background="#b3b3b3" FontSize="20"/>
+                <Button Grid.Column="2" Content="Alt" Background="#b3b3b3" FontSize="20"/>
+                <Button Grid.Column="3" Content="Space" Background="Orange" FontSize="20"/>
+                <Button Grid.Column="4" Content="Alt" Background= "#b3b3b3" FontSize="20"/>
+                <Button Grid.Column="5" Content="Win" Background="#b3b3b3" FontSize="20"/>
+                <Button Grid.Column="6" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
+
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
