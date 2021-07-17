@@ -11,16 +11,13 @@
             <Setter Property="FontSize" Value="33"/>
             <Setter Property="Margin" Value="1,2,1,2"/>
             <Setter Property="BorderThickness" Value="3"/>
-          
-            
-            
+
+
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="13"/>
                 </Style>
             </Style.Resources>
-        
-        
         
         </Style>
         

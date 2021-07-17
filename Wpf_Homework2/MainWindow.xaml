@@ -44,7 +44,7 @@
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
 
                 <Label Content="Speed:" Margin="0,0,5,0" FontSize="15"/>
-                <Label Name="speedLabel" FontWeight="Bold" FontSize="15"/>
+                <Label Name="speedLabel" Content="0" FontWeight="Bold" FontSize="15"/>
                 <Label Content="chars/min" Margin="5,0,0,0" FontSize="15"/>
 
             </StackPanel>
@@ -53,22 +53,23 @@
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
 
                 <Label Content="Fails:" Margin="0,0,5,0" FontSize="15"/>
-                <Label Name="failsNumberLabel" FontWeight="Bold" FontSize="15"/>
+                <Label Name="failsNumberLabel" Content="0" FontWeight="Bold" FontSize="15"/>
 
             </StackPanel>
 
 
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
 
-                <Label Content="Difficulty:" Margin="0,0,5,0" FontSize="15"/>
-                <Slider Minimum="5" Maximum="10" Width="100" Margin="5,5,0,0"/>
+                <Label Content="Difficulty:" FontSize="15"/>
+                <Label Name="difficultyLabel" Content="1" FontSize="15" FontWeight="Bold"/>
+                <Slider Name="difficultySlider" Minimum="1" Maximum="10" ValueChanged="difficultySlider_ValueChanged" Width="90" Margin="5,5,0,0"/>
 
             </StackPanel>
 
 
             <StackPanel Grid.Row="0" Grid.Column="3">
 
-                <CheckBox Content="Case Sensitive" Margin="0,5,0,0" FontSize="15"/>
+                <CheckBox Name="caseSensitiveCheckBox" Content="Case Sensitive" Margin="0,5,0,0" FontSize="15"/>
 
             </StackPanel>
 
@@ -99,7 +100,7 @@
             </Grid.RowDefinitions>
 
             <TextBox Name="exampleTextBox" Grid.Row="0" IsEnabled="False" Background="LightSkyBlue" BorderThickness="0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold"/>
-            <TextBox Name="userInputTextBox" KeyDown="userInputTextBox_KeyDown" KeyUp="userInputTextBox_KeyUp" Grid.Row="1" Background="LightSkyBlue" BorderThickness="0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold"/>
+            <TextBox Name="userInputTextBox" Focusable="False" KeyDown="userInputTextBox_KeyDown" KeyUp="userInputTextBox_KeyUp" TextChanged="userInputTextBox_TextChanged" Grid.Row="1" IsUndoEnabled="False" Background="LightSkyBlue" BorderThickness="0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold"/>
 
         </Grid>
 
@@ -159,13 +160,13 @@
                 <Button Name="fourButton" Grid.Column="4" Content="4" Background= "Lime"/>
                 <Button Name="fiveButton" Grid.Column="5" Content="5" Background="#06bcf9"/>
                 <Button Name="sixButton" Grid.Column="6" Content="6" Background="#06bcf9"/>
-                <Button Name="seventButton" Grid.Column="7" Content="7" Background="#de6afb"/>
+                <Button Name="sevenButton" Grid.Column="7" Content="7" Background="#de6afb"/>
                 <Button Name="eightButton" Grid.Column="8" Content="8" Background="#de6afb"/>
                 <Button Name="nineButton" Grid.Column="9" Content="9" Background="#f76e6e"/>
                 <Button Name="zeroButton" Grid.Column="10" Content="0" Background="#f4f471"/>
                 <Button Name="minusButton" Grid.Column="11" Content="-" Background="Lime"/>
                 <Button Name="equalsButton" Grid.Column="12" Content="=" Background="Lime"/>
-                <Button Grid.Column="13" Content="BackSpace" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="backSpaceButton" Grid.Column="13" Content="BackSpace" Background="#b3b3b3" FontSize="20"/>
 
             </Grid>
 
@@ -193,7 +194,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button Grid.Column="0" Content="Tab" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="tabButton" Grid.Column="0" Content="Tab" Background="#b3b3b3" FontSize="20"/>
                 <Button Name="qButton" Grid.Column="1" Content="q" Background="#f76e6e"/>
                 <Button Name="wButton" Grid.Column="2" Content="w" Background="#f4f471"/>
                 <Button Name="eButton" Grid.Column="3" Content="e" Background="Lime"/>
@@ -211,6 +212,7 @@
             </Grid>
 
 
+            
             <Grid Grid.Row="2">
 
                 <Grid.ColumnDefinitions>
@@ -244,7 +246,7 @@
                 <Button Name="lButton" Grid.Column="9" Content="l" Background="#f4f471"/>
                 <Button Name="semicolumnButton" Grid.Column="10" Content=";" Background="Lime"/>
                 <Button Name="paranthesisButton" Grid.Column="11" Content="'" Background="Lime"/>
-                <Button Grid.Column="12" Content="Enter" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="enterButton" Grid.Column="12" Content="Enter" Background="#b3b3b3" FontSize="20"/>
 
             </Grid>
 
@@ -285,6 +287,7 @@
 
             </Grid>
 
+            
 
             <Grid Grid.Row="4">
 
@@ -301,13 +304,13 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button Grid.Column="0" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="lCtrlButton" Grid.Column="0" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
                 <Button Grid.Column="1" Content="Win" Background="#b3b3b3" FontSize="20"/>
-                <Button Grid.Column="2" Content="Alt" Background="#b3b3b3" FontSize="20"/>
-                <Button Grid.Column="3" Content="Space" Background="Orange" FontSize="20"/>
-                <Button Grid.Column="4" Content="Alt" Background= "#b3b3b3" FontSize="20"/>
+                <Button Name="lAltButton" Grid.Column="2" Content="Alt" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="spaceButton" Grid.Column="3" Content="Space" Background="Orange" FontSize="20"/>
+                <Button Name="rAltButton" Grid.Column="4" Content="Alt" Background= "#b3b3b3" FontSize="20"/>
                 <Button Grid.Column="5" Content="Win" Background="#b3b3b3" FontSize="20"/>
-                <Button Grid.Column="6" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
+                <Button Name="rCtrlButton" Grid.Column="6" Content="Ctrl" Background="#b3b3b3" FontSize="20"/>
 
             </Grid>
 
